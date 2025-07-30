@@ -16,13 +16,15 @@ function sliderArr(x) {
     homeBg.src = "public/images/home_bg" + index + ".jpg";
 }
 
-window.setInterval(
-    function slider() {
-        var homeBg = document.getElementById("homeBg");
-        index = index + 1;
-        if(index > total) {index = 1;}
-        if(index < 1) {index = total;}
-        homeBg.src = "public/images/home_bg"+ index +".jpg";
-}, 5000);
+function slider() {
+    var homeBg = document.getElementById("homeBg");
+    index = index + 1;
+    if (index > total) { index = 1; }
+    if (index < 1) { index = total; }
+    homeBg.src = "public/images/home_bg" + index + ".jpg";
+}
 
+window.setInterval(slider, 5000);
+
+// show the second image immediately
 slider();
